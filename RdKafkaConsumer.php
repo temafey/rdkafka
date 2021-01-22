@@ -165,6 +165,7 @@ class RdKafkaConsumer implements Consumer
             case RD_KAFKA_RESP_ERR__PARTITION_EOF:
             case RD_KAFKA_RESP_ERR__TIMED_OUT:
             case RD_KAFKA_RESP_ERR__TRANSPORT:
+            case RD_KAFKA_RESP_ERR_UNKNOWN_TOPIC_OR_PART:
                 return null;
             case RD_KAFKA_RESP_ERR_NO_ERROR:
                 $message = $this->serializer->toMessage($kafkaMessage->payload);
